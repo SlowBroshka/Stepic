@@ -3,16 +3,16 @@
 #include <iostream>
 #include <conio.h>
 
-unsigned int get_last_digit(int64_t n, unsigned int m) {
+unsigned int get_last_digit(long long n, unsigned long m) {
 	unsigned int M[2];
 	M[0] = 0;
 	M[1] = 1;
-	int *Pisano = new int [1000000];
+	long *Pisano = new long [1000000];
 	Pisano[0] = 0;
 	Pisano[1] = 1;
-	int64_t k = n;
-	int Ncount = 2;
-	int i = 2;
+	long k = n;
+	long Ncount = 2;
+	long i = 2;
 	for (;n>0;n--){
 		M[2] = (M[1] + M[0]) % m;
 		M[0] = M[1] % m;
@@ -32,8 +32,7 @@ main() {
   int64_t n, m;
   std::cin >> n;
   std::cin >> m;
-  //printf("0 1 ");
   printf("%d",get_last_digit(n, m));
   getch();
-  //return 0;
+  return 0;
 }
